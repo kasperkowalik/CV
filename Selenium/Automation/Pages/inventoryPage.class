@@ -1,0 +1,27 @@
+package com.saucedemo.Pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class InventoryPage {
+    WebDriver driver;
+
+    By firstATB = new By.ByXPath("//*[@id=\"inventory_container\"]/div/div[1]/div[3]/button");
+    By secondATB = new By.ByXPath("//*[@id=\"inventory_container\"]/div/div[2]/div[3]/button");
+    By thirdATB = new By.ByXPath("//*[@id=\"inventory_container\"]/div/div[3]/div[3]/button");
+    By basket = new By.ByCssSelector("#shopping_cart_container > a");
+
+    public InventoryPage(WebDriver driver) {
+        this.driver = driver;
+    }
+
+    public void addToBasket() {
+        driver.findElement(firstATB).click();
+        driver.findElement(secondATB).click();
+        driver.findElement(thirdATB).click();
+    }
+
+    public void goToBasket() {
+        driver.findElement(basket).click();
+    }
+}

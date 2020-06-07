@@ -1,0 +1,36 @@
+package com.saucedemo.Pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class LoginPage {
+
+    WebDriver driver;
+
+    By login = new By.ById("user-name");
+    By password = new By.ById("password");
+    By loginButton = new By.ByXPath("//*[@id=\"login_button_container\"]/div/form/input[3]");
+
+    public LoginPage(WebDriver driver) {
+        this.driver = driver;
+    }
+
+    public void typeUsername(String usr) {
+        driver.findElement(login).sendKeys(usr);
+    }
+
+    public void typePassword() {
+        driver.findElement(password).sendKeys("secret_sauce");
+    }
+
+    public void clickLoginButton() {
+        driver.findElement(loginButton).click();
+    }
+
+    public void loginToWebsite() {
+        driver.findElement(login).sendKeys("standard_user");
+        driver.findElement(password).sendKeys("secret_sauce");
+        driver.findElement(loginButton).click();
+
+    }
+}

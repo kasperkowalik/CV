@@ -1,0 +1,23 @@
+package com.saucedemo.Pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class BasketPage {
+
+    WebDriver driver;
+    By deleteFirst = new By.ByXPath("//*[@id=\"cart_contents_container\"]/div/div[1]/div[3]/div[2]/div[2]/button");
+    By checkoutButton = new By.ByXPath("//*[@id=\"cart_contents_container\"]/div/div[2]/a[2]");
+
+    public BasketPage(WebDriver driver) {
+        this.driver = driver;
+    }
+
+    public void clickDeleteFirst() {
+        driver.findElement(deleteFirst).click();
+    }
+
+    public  void clickCheckoutButton() {
+        driver.findElement(checkoutButton).click();
+    }
+}

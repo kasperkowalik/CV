@@ -1,0 +1,33 @@
+package com.saucedemo.Pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class CheckoutStepOnePage {
+
+    WebDriver driver;
+    By firstName = new By.ById("first-name");
+    By lastName = new By.ById("last-name");
+    By postalCode = new By.ById("postal-code");
+    By continueBtn = new By.ByXPath("//*[@id=\"checkout_info_container\"]/div/form/div[2]/input");
+
+    public CheckoutStepOnePage(WebDriver driver) {
+        this.driver = driver;
+    }
+
+    public void setFirstName() {
+        driver.findElement(firstName).sendKeys("tester");
+    }
+
+    public void setLastName() {
+        driver.findElement(lastName).sendKeys("testerowy");
+    }
+
+    public void setPostalCode() {
+        driver.findElement(postalCode).sendKeys("80000");
+    }
+
+    public void clickContinue() {
+        driver.findElement(continueBtn).click();
+    }
+}
